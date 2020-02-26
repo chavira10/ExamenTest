@@ -1,39 +1,22 @@
-section .text
+.model small
+.data
+ opr1 dw 1234h
+ opr2 dw 0002h
+ result dw 01 dup(?),\'$\'
+.code
+        mov ax,@data
+        mov ds,ax
+        mov ax,opr1
+        mov bx,opr2
+        clc
+        add ax,bx
+        mov di,offset result
+        mov [di], ax
 
-global _start
+        mov ah,09h
+        mov dx,offset result
+        int 21h
 
-_start:
-
-    mov     eax, [x]
-    sub     eax, '0'
-    mov     ebx, [y]
-    sub     ebx, '0'
-    add     eax, ebx
-    add     eax, '0'
-
-    mov     [sum], eax
-
-    mov     ecx, msg
-    mov     edx, len
-    mov     ebx, 1
-    mov     eax, 4
-    int     0x80
-
-    mov     ecx, sum
-    mov     edx, 1
-    mov     ebx, 1
-    mov     eax, 4
-    int     0x80
-
-    mov     eax, 1
-    int     0x80
-
-section .data
-    x db '3'
-    y db '4'
-    msg db  "sum of x and y is "
-    len equ $ - msg
-
-segment .bss
-
-    sum resb 1
+        mov ah,4ch
+        int 21h
+        end
