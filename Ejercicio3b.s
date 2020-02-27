@@ -1,6 +1,6 @@
 .data
 
-cadena: .asciz "Hola  Mundo!\n"
+cadena: .asciz "2,5,11,23,47,95,191,383,767,998"
 cadenafin:
 
 .text
