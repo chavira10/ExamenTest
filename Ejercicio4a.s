@@ -1,6 +1,4 @@
-/* -- isort.s **********************
-* Demonstrates insertion sort *
-***********************************/
+
 .text
 .global main
 main:
@@ -9,8 +7,7 @@ ldr r7, =return @ get ready to save
 str lr, [r7] @ link register for return
 mov r6, #0 @ keep count in r6
 ldr r4, =array @ keep constant &array in r4
-64
-10.2. Insertion Sort
+
 @@@@@@@@@@@@@@@@@ INPUT
 input:
 ldr r0, =prompt
@@ -51,8 +48,7 @@ mov r2, #1 @ i = 1
 iloop: @ for-loop as while loop
 cmp r2, r1 @ i - n
 bge iloopend @ i >= n => loopend
-65
-10. Searching and Sorting
+
 add r10, r0, r2, LSL #2 @ temp = &array[4*i]
 ldr r10, [r10] @ temp = array[4*i]
 sub r3, r2, #1 @ j = i - 1
@@ -97,8 +93,7 @@ mov r0, r6 @ r0 = r6 return code = n
 ldr r1, =return @ r1 <- &return
 ldr lr, [r1] @ lr <- *r1 saved return address
 bx lr
-66
-10.3. Random Numbers
+
 @@@@@@@@@@@@@@@@@
 .data
 number: .word 0 @ place to hold input number
