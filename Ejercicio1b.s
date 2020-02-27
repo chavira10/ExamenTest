@@ -1,6 +1,6 @@
 .data
 
-cadena: .asciz "Lei un numero!\n"
+cadena: .asciz "Hey, type a number:"
 cadenafin:
 
 .text
